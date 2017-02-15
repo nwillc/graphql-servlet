@@ -22,7 +22,8 @@ dependencies {
            'io.undertow:undertow-servlet:' + undertow_version,
            'com.fasterxml.jackson.core:jackson-core:' + jackson_fasterxml_version,
            'com.fasterxml.jackson.core:jackson-databind:' + jackson_fasterxml_version,
-           'com.fasterxml.jackson.datatype:jackson-datatype-jdk8:' + jackson_fasterxml_version
+           'com.fasterxml.jackson.datatype:jackson-datatype-jdk8:' + jackson_fasterxml_version,
+           'net.sf.jopt-simple:jopt-simple:6.0-alpha-1'
 }
 
 apply plugin: 'application'
