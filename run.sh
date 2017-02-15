@@ -9,8 +9,8 @@ cd ${SCRIPT_DIR}
 echo Rebuild server...
 ./gradlew -q clean oneJar -x test
 [ $? != 0 ] && exit 1
-JAVA_OPTS="-Djava.awt.headless=true -Xmx19M"
+JAVA_OPTS=(-Djava.awt.headless=true -Dorg.jboss.logging.provider=slf4j -Xmx19M)
 
 echo Start server...
-java ${JAVA_OPTS} -jar build/libs/*-standalone.jar $*
+java ${JAVA_OPTS[@]} -jar build/libs/*-standalone.jar $*
 

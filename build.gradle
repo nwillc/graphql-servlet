@@ -1,5 +1,3 @@
-
-
 buildscript {
     repositories {
         jcenter()
@@ -18,12 +16,15 @@ repositories {
 }
 
 dependencies {
-   compile 'io.undertow:undertow-core:' + undertow_version,
-           'io.undertow:undertow-servlet:' + undertow_version,
-           'com.fasterxml.jackson.core:jackson-core:' + jackson_fasterxml_version,
-           'com.fasterxml.jackson.core:jackson-databind:' + jackson_fasterxml_version,
-           'com.fasterxml.jackson.datatype:jackson-datatype-jdk8:' + jackson_fasterxml_version,
-           'net.sf.jopt-simple:jopt-simple:6.0-alpha-1'
+    compile 'io.undertow:undertow-core:' + undertow_version,
+            'io.undertow:undertow-servlet:' + undertow_version,
+            'com.fasterxml.jackson.core:jackson-core:' + jackson_fasterxml_version,
+            'com.fasterxml.jackson.core:jackson-databind:' + jackson_fasterxml_version,
+            'com.fasterxml.jackson.datatype:jackson-datatype-jdk8:' + jackson_fasterxml_version,
+            'net.sf.jopt-simple:jopt-simple:' + jopt_version,
+            'org.tinylog:tinylog:' + tiny_log_version
+
+    runtime 'org.tinylog:slf4j-binding:' + tiny_log_version
 }
 
 apply plugin: 'application'
@@ -34,6 +35,8 @@ version = '0.0.1'
 targetCompatibility = '1.8'
 sourceCompatibility = '1.8'
 mainClassName = 'com.github.nwillc.undertow.ServletServer'
+
+
 
 task oneJar(type: OneJar) {
     dependsOn build
