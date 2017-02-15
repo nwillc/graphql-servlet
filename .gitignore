@@ -1,0 +1,7 @@
+.gradle
+build
+*.iml
+.idea
+env.sh
+src/main/resources/build.json
+*~

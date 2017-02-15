@@ -1,0 +1,38 @@
+
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.github.rholder:gradle-one-jar:1.0.4'
+    }
+}
+
+plugins {
+    id 'java'
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+   compile 'io.undertow:undertow-core:' + undertow_version,
+           'io.undertow:undertow-servlet:' + undertow_version
+}
+
+apply plugin: 'application'
+apply plugin: 'gradle-one-jar'
+
+group = 'com.github.nwillc'
+version = '0.0.1'
+targetCompatibility = '1.8'
+sourceCompatibility = '1.8'
+mainClassName = 'com.github.nwillc.undertow.HelloWorldServer'
+
+task oneJar(type: OneJar) {
+    dependsOn build
+    mainClass = project.mainClassName
+    additionalDir = file('build/resources/main')
+}
