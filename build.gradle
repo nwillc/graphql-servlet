@@ -19,7 +19,10 @@ repositories {
 
 dependencies {
    compile 'io.undertow:undertow-core:' + undertow_version,
-           'io.undertow:undertow-servlet:' + undertow_version
+           'io.undertow:undertow-servlet:' + undertow_version,
+           'com.fasterxml.jackson.core:jackson-core:' + jackson_fasterxml_version,
+           'com.fasterxml.jackson.core:jackson-databind:' + jackson_fasterxml_version,
+           'com.fasterxml.jackson.datatype:jackson-datatype-jdk8:' + jackson_fasterxml_version
 }
 
 apply plugin: 'application'
