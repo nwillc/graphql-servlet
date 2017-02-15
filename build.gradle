@@ -29,7 +29,7 @@ group = 'com.github.nwillc'
 version = '0.0.1'
 targetCompatibility = '1.8'
 sourceCompatibility = '1.8'
-mainClassName = 'com.github.nwillc.undertow.HelloWorldServer'
+mainClassName = 'com.github.nwillc.undertow.ServletServer'
 
 task oneJar(type: OneJar) {
     dependsOn build
