@@ -25,7 +25,7 @@ public class GraphQLServlet extends HttpServlet implements JsonMapper {
     @SuppressWarnings("unchecked")
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        final String body = req.getReader().lines().collect(joining("\n"));
+        final String body = req.getReader().lines().collect(joining(System.lineSeparator()));
         Map<String, Object> payload;
         try {
             payload = getMapper().readValue(body, Map.class);
@@ -33,7 +33,7 @@ public class GraphQLServlet extends HttpServlet implements JsonMapper {
             resp.sendError(HTTP_BAD_REQUEST, "Could not parse request body as GraphQL map.");
             return;
         }
-        Map<String, Object> variables = (Map<String, Object>) payload.get("variables");
+        Map<String, Object> variables = (Map<String, Object>) payload.get(VARIABLES);
 
         Map<String, Object> result = new LinkedHashMap<>();
         result.put(DATA, payload);
