@@ -4,4 +4,4 @@ jdk:
 env:
   - TERM=dumb
 script:
-  - ./gradlew build
+  - ./gradlew oneJar --no-daemon
