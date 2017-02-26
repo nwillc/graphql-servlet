@@ -1,6 +1,8 @@
+# The following will only work in Travis-CI not Jenkins
 language: java
 jdk:
   - oraclejdk8
+# The rest works in Travis-CI and Jenkins
 env:
   - TERM=dumb
 script:
